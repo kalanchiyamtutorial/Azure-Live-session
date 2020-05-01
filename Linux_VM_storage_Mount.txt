@@ -1,0 +1,22 @@
+sudo apt-get update
+
+sudo apt install nfs-common
+
+sudo apt-get install cifs-utils
+
+sudo mkdir /mnt/MyAzureFile
+
+
+sudo mount -t cifs //<storage-account-name>.file.core.windows.net/<share-name> <mount-point> -o vers=<smb-version>,username=<storage-account-name>,password=<storage-account-key>,dir_mode=0777,file_mode=0777,serverino
+
+
+sudo mount -t cifs //credo01.file.core.windows.net/credo01 /mnt/MyAzureFile -o vers=3.0,username=credo01,password=UzXBCZdiHGF0HAVcsjY3l4CKq15y5E2FkEftrox49uanEnLMaSd8OUaQGWrOVphxZZbltIG9m9k2aozXjZrL5A==,dir_mode=0777,file_mode=0777,serverino
+
+cd /mnt/MyAzureFile
+
+ls 
+
+-----------------------------------
+NGINIX Installtion:
+sudo apt-get install nginx
+sudo /etc/init.d/nginx start
